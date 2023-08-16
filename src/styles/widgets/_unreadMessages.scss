@@ -1,0 +1,20 @@
+.unread-messages-component {
+  height: 100%;
+
+  .k-scrollview{
+      .k-scrollview-wrap> li {
+          display: flex;
+          align-items: center;
+        }
+  } 
+
+  .empty-messages {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #8fa2b3;
+    padding-bottom: 60px;
+  }
+}

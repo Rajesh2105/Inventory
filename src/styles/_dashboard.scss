@@ -1,0 +1,228 @@
+.dashboard-bar>ul {
+    @include horizontal-scroll;
+}
+
+.dashboard-wrapper {
+    position: relative;
+    @include second-tab-header;
+    .k-tabstrip-items-wrapper>.k-tabstrip-items {
+        padding: 0 3px;
+        overflow-x: auto;
+        border-bottom-width: 0; // Override
+        background-color: $color-white;
+        @include shadow-box;
+        @include mobile-above {
+            height: $dashboard-tabs-height;
+        }
+        @include mobile {
+            height: calc(#{$dashboard-tabs-height} - 1rem);
+        }
+        .k-link {
+            padding: 0;
+            font-size: $fontsize-md;
+            box-shadow: none;
+            &:hover {
+                color: $color-primary-dark;
+            }
+        }
+        .k-item {
+            color: $color-gray-800;
+            margin-bottom: 0;
+            border-radius: 0 solid $color-white;
+            border: 0;
+            padding: 8px 28px;
+            box-shadow: none;
+            &.k-active {
+                .k-item {
+                    padding: 0;
+                    box-shadow: none;
+                    border-color:  transparent;
+                }
+                .k-link {
+                    color: $color-blue;
+                    font-weight: 700;
+                    position: relative;
+                    padding: 0;
+                    margin-right: -2px;
+                
+                    &:hover {
+                        color: $color-blue-dark;
+                    }
+                
+                    .k-menu-link-text {
+                        &:hover {
+                            color: $color-blue-dark;
+                        }
+                    }
+                
+                    .k-menu-expand-arrow > .k-icon {
+                        position: absolute;
+                        top: calc(50% - 3px);
+                        right: -14px;
+                        width: 0;
+                        height: 0;
+                        border-left: 5px solid transparent;
+                        border-right: 5px solid transparent;
+                        border-top: 5px solid;
+                        &:before {
+                            display: none;
+                        }
+                    }
+                    
+                }
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 35px;
+                    height: 3px;
+                    position: absolute;
+                    bottom: 0;
+                    left: calc(50% - 17px);
+                    background-color: $color-blue;
+                }
+                
+            }
+        }
+        .k-menu:not(.k-context-menu)>.k-item {
+            &:hover,
+            &.k-state-hover {
+                color: $color-blue;
+            }
+        }
+        >li:last-child {
+            span {
+                font-size: $iconsize-24;
+                font-weight: 100;
+            }
+        }
+    }
+    .widget-container {
+        .table-wrapper {
+            // height: 800px;
+            height: calc(100% - 4.5rem);
+            max-height: 800px;
+        }
+    }
+}
+
+.k-animation-container-shown {
+    box-shadow: none;
+}
+
+.k-animation-container>.k-popup {
+    box-shadow: none;
+    border: 0;
+    background-color: white;
+    font-size: $fontsize-menu;
+    color: $default-body-font-color;
+    .k-list-optionlabel {
+        padding: 8px 20px 8px 12px;
+    }
+    h5 {
+        padding: 8px 12px;
+    }
+    .k-list>.k-list-content>.k-list-ul {
+        >.k-list-item {
+            display: block !important;
+            padding: 8px 12px;
+            box-shadow: none;
+            span {
+                display: inline-block;
+                line-height: 18px;
+            }
+            .etonicon {
+                float: right;
+                color: $color-primary-light;
+                font-size: $iconsize-20;
+                &:hover {
+                    color: $color-primary-second;
+                }
+            }
+        }
+    }
+}
+
+.inline-delete-confirmation {
+    background-color: $color-red-light;
+    color: $color-red;
+    padding: 6px 12px;
+    margin: 8px -12px -8px;
+    font-size: $fontsize-menu;
+    span {
+        width: 100% !important;
+        line-height: 16px !important;
+        font-weight: 600 !important;
+        text-align: center;
+    }
+    .buttons-wrapper {
+        margin: 5px 0;
+    }
+}
+
+.k-list .k-list-item.k-selected,
+.k-list-optionlabel.k-selected {
+    box-shadow: none;
+    background-color: $color-gray-200;
+    color: $color-blue;
+    font-weight: 600;
+    border-color: transparent;
+    &:hover {
+        background-color: $color-gray-200;
+        color: $color-blue-dark;
+    }
+}
+
+.k-list .k-item:focus,
+.k-list .k-item.k-focus,
+.k-list-optionlabel:focus,
+.k-list-optionlabel.k-focus {
+    box-shadow: none;
+}
+
+.k-animation-container {
+    border: 0 !important;
+    background-color: $color-white;
+    border-radius: $default-border-radius;
+    padding: 10px 0;
+    min-width: 200px !important;
+    @include shadow-prompt;
+    .k-menu-popup {
+        border: 0;
+        background-color: transparent;
+        box-shadow: none;
+        animation: none;
+        transition: none;
+    }
+    .k-menu-group {
+        border: 0;
+        background-color: transparent;
+        box-shadow: none;
+        .k-menu-item {
+            .k-link {
+                background-color: transparent;
+                padding: 6px;
+                padding-right: 10px;
+                font-size: $fontsize-menu;
+                box-shadow: none;
+                &:hover {
+                    background-color: $color-gray-200;
+                }
+                .etonicon {
+                    margin-right: 12px;
+                    font-size: $fontsize-xl;
+                    color: $color-primary-light;
+                }
+            }
+        }
+        .k-menu-link {
+            padding: 6px;
+            .etonicon {
+                padding-right: 5px;
+            }
+        }
+    }
+}
+
+.remove-option {
+    color: $color-red !important;
+}

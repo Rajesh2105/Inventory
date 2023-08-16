@@ -1,0 +1,77 @@
+.widget-summary-pills {
+  @include laptop-above {
+    padding: 5px;
+  }
+  ul {
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 15px;
+
+    .pill-item {
+      display: table-cell;
+      border-radius: $default-border-radius;
+      background-color: $color-gray-200;
+      padding: 17px;
+      vertical-align: middle;
+      text-align: center;
+
+      h5 {
+        line-height: 1.1em !important;
+      }
+      .period {
+        color: $color-gray-800;
+        font-size: $fontsize-xs;
+        font-style: italic;
+        margin: 0;
+        line-height: 1.1em;
+      }
+
+      .highlight {
+        white-space: nowrap;
+        font-weight: 700 !important;
+        color: $default-body-font-color;
+      }
+      .percentage {
+        border-radius: $default-border-radius;
+        margin: 0 auto !important;
+        padding: 4px 5px 2px;
+        width: fit-content;
+        background-color: $color-gray-400;
+
+        .etonicon {
+          margin-left: -2px;
+        }
+      }
+
+      &.negative {
+        .percentage,
+        .highlight {
+          color: $color-red;
+        }
+        .percentage {
+          background-color: $color-red-light;
+          .etonicon {
+            color: $color-red;
+            margin-right: -3px;
+            transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+          }
+        }
+      }
+
+      // Responsive
+
+      @media (max-width: 899px) {
+        display: block;
+        margin-top: 12px;
+        padding: 12px 10px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

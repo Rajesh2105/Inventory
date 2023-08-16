@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+// Shared
+@import "./styles/variables"; //Styles
+// @import "./styles/EtonSolutions/variables"; //ES
+// @import "./styles/AYCO/variables"; //Ayco
+// @import "./styles/EtonAdvisors/variables"; //EA
+// @import "./styles/Shadetree/variables"; //ShadeTree
+// @import "./styles/KPMG/variables"; //KPMG
+// @import "./styles/Commodore/variables"; //Commodore
+// @import "./styles/FBCO/variables"; //FBCO
+// @import "./styles/OakmontCorp/variables"; //Oakmont
+// @import "./styles/Sawmill/variables"; //Sawmill
+// @import "./styles/StandardTrust/variables"; //StandardTrust
+/* @import "./styles/common"; */
+@import "./styles/common";
+// Components
+@import "./styles/layout"; // Header, Second Tabs, Sidebar, Master Filter
+@import "./styles/dialog"; // General dialog, Dialog with Details
+@import "./styles/mobile-dialog"; // Mobile General dialog, Dialog with Details
+@import "./styles/table";
+@import "./styles/card";
+@import "./styles/widgets";
+// Page Specific
+@import "./styles/dashboard";
+@import "./styles/login";
+@import "./styles/messaging";
+@import "./styles/actions";

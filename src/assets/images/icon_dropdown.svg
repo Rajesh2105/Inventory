@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Caret Down</title>
+    <g id="Caret-Down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M6.41421356,9 L19.5857864,9 C20.1380712,9 20.5857864,9.44771525 20.5857864,10 C20.5857864,10.2652165 20.4804296,10.5195704 20.2928932,10.7071068 L13.7071068,17.2928932 C13.3165825,17.6834175 12.6834175,17.6834175 12.2928932,17.2928932 L5.70710678,10.7071068 C5.31658249,10.3165825 5.31658249,9.68341751 5.70710678,9.29289322 C5.89464316,9.10535684 6.14899707,9 6.41421356,9 Z" id="Path-13" fill="#000000" transform="translate(13.000000, 13.500000) rotate(1.000000) translate(-13.000000, -13.500000) "></path>
+    </g>
+</svg>

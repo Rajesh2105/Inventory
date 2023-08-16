@@ -1,0 +1,470 @@
+// General Dialog (Non-detail)
+.k-dialog-wrapper {
+    @include placeholder($color-gray-600);
+    .k-dialog {
+        border-radius: $default-border-radius;
+        min-width: 400px;
+        @media (max-width: 600px) {
+            height: 100%;
+            min-width: 100%;
+            border-radius: 0;
+        }
+        .k-dialog-titlebar {
+            background-color: transparent;
+            padding: 25px 30px 0;
+            border: 0;
+            white-space: normal;
+            .k-window-title {
+                display: block;
+                flex: none;
+                text-align: center;
+                width: 95%;
+                color: $default-body-font-color;
+                font-size: $fontsize-lg;
+                font-weight: 700;
+                margin: 0 auto;
+                padding-bottom: 20px;
+            }
+            .k-window-action,
+            .k-window-actions {
+                display: none;
+            }
+            &.with-close {
+                .k-dialog-titlebar-actions{display:none;}
+                .close {
+                    width: 70px;
+                    height: 60px;
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    .etonicon {
+                        font-size: $iconsize-25;
+                        margin: 22px 0 0 20px;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 0.8;
+                    }
+                }
+                .k-window-title {
+                    text-align: left;
+                    width: 100%;
+                    padding-right: 60px;
+                    margin: 0;
+                }
+            }
+        }
+        .k-window-content {
+            background-color: $color-white !important;
+            padding: 0 30px 30px;
+            text-align: center;
+            font-size: $default-body-font-size;
+            border-radius: $default-border-radius;
+        }
+        .k-dialog-buttongroup {
+            border: 0;
+            padding: 10px 30px 30px;
+            text-align: center;
+            display: block;
+        }
+        input {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    .k-dialog-wrapper {
+        padding: 0 15px;
+        .k-dialog {
+            min-width: 100%;
+            .k-dialog-buttongroup {
+                .button {
+                    width: 100%;
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+}
+
+.k-animation-container {
+    @include shadow-prompt;
+}
+
+// Contact Page Dialog Details
+.page-contacts {
+    .dialog-details-wrapper {
+        +.k-window-content {
+            .details-left-panel {
+                .details-header {
+                    .scrollable-inner {
+                        @media (min-width: 950px) {
+                            height: calc(100vh - 340px) !important;
+                        }
+                        @media (max-width: 949px) {
+                            height: calc(100vh - 282px) !important;
+                        }
+                    }
+                    .details-actions {
+                        .button {
+                            position: relative;
+                            text-align: left;
+                            padding-left: 41px;
+                            white-space: normal;
+                            min-height: 37px;
+                            height: auto;
+                            font-size: $fontsize-sm;
+                            color: $default-body-font-color;
+                            .etonicon {
+                                position: absolute;
+                                top: 7px;
+                                left: 0;
+                                font-size: $iconsize-24;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+kendo-svg-icons{
+    display:none !important;
+  }
+// General Dialog Details
+.dialog-details-wrapper {
+    +.k-window-content {
+        padding: 0 !important;
+        .details-left-panel {
+            .k-drawer {
+                background-color: transparent !important;
+            }
+            .details-header {
+                text-align: left;
+                .scrollable-inner {
+                    height: calc(100vh - 260px);
+                    padding-right: 25px;
+                    padding-left: 25px;
+                }
+                .details-header-content {
+                    padding-bottom: 20px;
+                    .round-avatar {
+                        width: $avatar-md;
+                        height: $avatar-md;
+                    }
+                    .title {
+                        text-transform: capitalize;
+                    }
+                }
+                .details-actions {
+                    .button {
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+                    .drawer-menu {
+                        width: 100%;
+                        .k-menu {
+                            .k-item {
+                                border: 1px solid $color-gray-600;
+                                width: 100%;
+                                border-radius: $default-border-radius;
+                                background: url("/assets/images/icon_more.svg") no-repeat center center;
+                                box-shadow: none;
+                                opacity: 0.7;
+                                .k-link {
+                                    display: block;
+                                    text-indent: -999px;
+                                    .k-icon {
+                                        display: none;
+                                    }
+                                }
+                                &:hover {
+                                    // border: 1px solid $color-gray-600;
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .details-footer {
+                text-align: left;
+                h5 {
+                    padding: 10px 0;
+                    padding-left: 25px;
+                }
+                +.k-drawer-items {
+                    // padding-left: 20px;
+                    padding-bottom: 23px;
+                    .k-drawer-item {
+                        font-size: $fontsize-menu;
+                        padding-left: 25px;
+                        color: $default-body-font-color;
+                        &.k-selected {
+                            background-color: transparent;
+                            color: $color-blue;
+                            border-right: 4px solid $color-blue;
+                            font-weight: 700;
+                            cursor: default;
+                            box-shadow: none;
+                        }
+                        .k-item-text {
+                            padding-left: 10px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        .k-icon {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .center {
+                text-align: center;
+            }
+        }
+        .details-right-panel {
+            max-height: 100%;
+            overflow-y: scroll;
+            width: 100%;
+            overflow: hidden;
+            text-align: left;
+            &.with-title {
+                // position: relative;
+                .title {
+                    // position: absolute;
+                    // top: 0;
+                    // left: 0;
+                    padding: 0 25px 10px;
+                }
+                .details-content-tab {
+                    height: calc(100vh - 120px - 27px);
+                }
+            }
+            .details-content-tab {
+                padding-left: 25px;
+                padding-right: 20px;
+                height: calc(100vh - 120px);
+                overflow: auto;
+                .k-chart {
+                    height: 250px;
+                }
+                .table-wrapper {
+                    height: calc(100% - 250px);
+                    @media (min-width: 940px) {
+                        .table-toolbar {
+                            .toolbar-search {
+                                width: 160px !important;
+                            }
+                            .toolbar-filter {
+                                .k-dropdown,
+                                .filter-field .filter-new {
+                                    width: 120px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+                .detail-row {
+                    .detail-item {
+                        display: table-cell;
+                        vertical-align: top;
+                        text-align: left;
+                        .detail-value {
+                            padding-bottom: 20px;
+                            .document-download {
+                                margin-top: 10px;
+                                border: 1px solid $default-line-color;
+                                // max-width: 260px;
+                                width: 100%;
+                                padding: 10px;
+                                .doc-link {
+                                    color: $color-blue;
+                                    .etonicon {
+                                        color: $color-blue;
+                                        font-size: $iconsize-19;
+                                        margin-left: 0;
+                                    }
+                                }
+                                .doc-preview {
+                                    margin-top: 5px;
+                                    height: calc(100vh - 315px);
+                                    img {
+                                        width: 100%;
+                                        height: auto;
+                                    }
+                                    @media (max-width: 720px) {
+                                        height: calc(100vh - 365px);
+                                    }
+                                }
+                            }
+                        }
+                        &.four-1 {
+                            width: 25%;
+                        }
+                        &.four-2 {
+                            width: 50%;
+                        }
+                        &.four-3 {
+                            width: 75%;
+                        }
+                        &.four-4 {
+                            width: 100%;
+                        }
+                    }
+                    &.document {
+                        display: table;
+                        width: 100%;
+                    }
+                }
+            }
+            .details-table-tab {
+                .table-wrapper {
+                    .k-grid-aria-root {
+                        height: calc(100vh - 182px);
+                    }
+                    .table-toolbar {
+                        .toolbar-search {
+                            width: auto;
+                        }
+                        .toolbar-filter,
+                        .toolbar-filter-reset {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive
+$dialog-minwidth-lg: 650px;
+.dialog-details-wrapper {
+    @media (max-width: 949px) {
+        background-color: $color-white !important;
+        +.k-window-content {
+            border-radius: 0 !important;
+        }
+    }
+    +.k-window-content {
+        .details-right-panel {
+            max-height: 100%;
+            overflow-y: scroll !important;
+            @media (min-width: 950px) {
+                width: $dialog-minwidth-lg;
+                .details-table-tab {
+                    .table-wrapper {
+                        max-width: $dialog-minwidth-lg;
+                    }
+                }
+            }
+            @media (max-width: 949px) {
+                width: calc(100vw - #{$sidebar-width});
+                .details-content-tab {
+                    height: calc(100vh - #{$dialog-header-height});
+                }
+                .details-table-tab {
+                    .table-wrapper {
+                        .k-grid-aria-root {
+                            height: calc(100vh - 125px);
+                        }
+                    }
+                }
+            }
+            @media (max-width: 720px) {
+                .details-content-tab {
+                    .detail-item {
+                        display: block !important;
+                    }
+                }
+            }
+        }
+        @media (max-width: 949px) {
+            .details-left-panel {
+                .details-header {
+                    .scrollable-inner {
+                        height: calc(100vh - 202px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-details-header {
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .doc-preview {
+        height: 600px;
+    }
+}
+
+//Terms of service dialog
+.tos-dialog {
+    width: 80vw;
+    height: 85vh;
+    .tos-doc-preview {
+        height: 92%;
+    }
+    .wrap {
+        height: 8%;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: 10px;
+        .tos-label {
+            flex: 1;
+            margin: 10px;
+            font-size: 22px;
+        }
+        .tos-input {
+            width: 50px;
+        }
+        .button {
+            min-width: 150px;
+            &:disabled {
+                background: grey;
+            }
+        }
+        // input {
+        //     &.isChecked {
+        //         background: $color-blue;
+        //     }
+        // }
+        input[type="checkbox"] {
+            display: none;
+        }
+        input[type="checkbox"]+label {
+            align-items: center;
+        }
+        input[type="checkbox"]+label:before {
+            content: '';
+            display: inline-block;
+            border: 1px solid #000;
+            color: $color-blue;
+            margin-right: 10px;
+            padding: 5px;
+            font-size: 1.6em;
+            min-width: 30px;
+            min-height: 25px;
+        }
+        input[type="checkbox"]:checked+label:before {
+            content: '✔';
+            display: inline-block;
+            border: 1px solid #000;
+            color: $color-blue;
+            margin-right: 10px;
+            padding: 5px;
+            font-size: 1.6em;
+            min-width: 30px;
+            min-height: 25px;
+            align-items: center;
+        }
+    }
+}

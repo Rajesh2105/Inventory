@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="62px" viewBox="0 0 200 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>afo-poweredby</title>
+    <g id="afo-poweredby" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-weight="normal">
+        <text id="Eton-Solutions-|-AFO" font-family="Athelas-Regular, Athelas" font-size="21.658" letter-spacing="-0.433160002" fill="#FFFFFF">
+            <tspan x="3.822" y="22.822">E</tspan>
+            <tspan x="16.05877" y="22.822" letter-spacing="-0.216580001">t</tspan>
+            <tspan x="22.274616" y="22.822">on Sol</tspan>
+            <tspan x="79.495052" y="22.822" letter-spacing="-0.10829">u</tspan>
+            <tspan x="91.385294" y="22.822">tions | A</tspan>
+            <tspan x="165.195758" y="22.822" letter-spacing="-0.435325793">F</tspan>
+            <tspan x="176.607358" y="22.822">O</tspan>
+        </text>
+        <text id="Powered-by-AtlasFive" font-family="Athelas-Italic, Athelas" font-size="19.11" font-style="italic" letter-spacing="-0.477750012" fill="#FFFFFF">
+            <tspan x="3.822" y="51.7037864">P</tspan>
+            <tspan x="12.91836" y="51.7037864">o</tspan>
+            <tspan x="21.11655" y="51.7037864" letter-spacing="-0.193011003">w</tspan>
+            <tspan x="34.587189" y="51.7037864">e</tspan>
+            <tspan x="41.925429" y="51.7037864" letter-spacing="-0.0955500038">r</tspan>
+            <tspan x="48.613929" y="51.7037864">ed by </tspan>
+            <tspan x="91.573209" y="51.7037864" letter-spacing="-0.382200015">A</tspan>
+            <tspan x="101.835279" y="51.7037864">tlasFi</tspan>
+            <tspan x="142.768899" y="51.7037864" letter-spacing="-0.191100008">v</tspan>
+            <tspan x="151.387509" y="51.7037864">e®</tspan>
+        </text>
+    </g>
+</svg>

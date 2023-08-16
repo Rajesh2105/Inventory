@@ -1,0 +1,17 @@
+.transaction-table-data {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+
+  .k-widget {
+    overflow: auto;
+    width: 100%;
+  }
+}
+
+.transaction-table-filter {
+  img {
+    max-width: 1050px;
+    width: 100%;
+  }
+}

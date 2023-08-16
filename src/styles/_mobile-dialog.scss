@@ -1,0 +1,145 @@
+.mobile-dialog-details-container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    .details-header {
+        padding: 20px 20px 10px;
+
+        .details-header-content {
+            text-align: left;
+            padding: 0 10px;
+    
+            &.center {
+                text-align: center;
+            }
+        }
+        .details-actions {
+            padding-top: 10px;
+
+            &.buttons-wrapper {
+                .button {
+                    flex: 1;
+                    margin: 0 10px;
+                }
+                &.profile {
+                    flex-direction: column;
+    
+                    .button {
+                        flex: 1;
+                        margin-top: 10px;
+                        text-align: left;
+                        .etonicon {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .detail-row {
+        text-align: left;
+        padding: 10px 15px;
+
+        .detail-item {
+            padding-bottom: 10px;
+        }
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .details-content-tab {
+        padding-top: 10px;
+    
+        &.left {
+            text-align: left;
+        }
+    }
+
+    .details-status {
+        text-align: left;
+        padding-left: 11px;
+        color: $color-primary-light;
+    }
+
+
+
+    .k-tabstrip-top {
+
+        > .k-content {
+            border: 0;
+        }
+
+        > .k-tabstrip-items {
+            overflow-x: scroll;
+    
+            .k-item {
+                color: #8fa2b3;
+                margin-bottom: 0;
+                border-radius: 0;
+                border: 0;
+                padding: 8px 28px;
+                margin-left: 0;
+    
+                &.k-active {
+                    color: $color-blue;
+    
+                    &:after {
+                        content: "";
+                        display: block;
+                        width: 35px;
+                        height: 3px;
+                        position: absolute;
+                        bottom: 0;
+                        left: calc(50% - 17px);
+                        background-color: $color-blue;
+                    }
+                }
+            }
+        }
+    } 
+
+    .table-wrapper .k-grid-toolbar .table-toolbar .toolbar-end {
+        display: flex;
+    }
+
+    .toolbar-export {
+        display: none;
+    }
+
+    .more-actions {
+        width: 55px;
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        height: $default-input-height;
+
+        .k-menu {
+            width: 100%;
+            .k-menu-item {
+                width: 100%;
+                .k-menu-link {
+                    height: $default-input-height;
+                    background: url("/assets/images/icon_more.svg") no-repeat center center;
+                    text-indent: -999px;
+                    opacity: 0.8;
+                    .k-icon {
+                        display: none;
+                    }
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+            > .k-item {
+                box-shadow: none;
+            }
+        }
+    }
+}

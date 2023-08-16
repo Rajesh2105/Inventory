@@ -1,0 +1,544 @@
+$inbox-list-toolbar-height: 67px;
+.page-messages {
+    .switch-view {
+        .icon-button {
+            margin-right: 0;
+        }
+    }
+    .inbox-list-wrapper {
+        .message-item {
+            .icon-attachment {
+                position: absolute;
+                left: -1.5rem;
+                top: calc(50% - 0.7rem);
+                font-size: $fontsize-menu;
+            }
+        }
+        @include mobile {
+            .k-drawer-items {
+                height: calc(100vh - #{$default-header-height} - #{$dashboard-tabs-height} - #{$inbox-list-toolbar-height} + 1rem) !important;
+            }
+        }
+    }
+}
+
+.inbox-list-wrapper {
+    background-color: $color-white;
+    border-top: 1px solid $default-line-color;
+    border-right: 1px solid $default-line-color;
+    overflow: hidden;
+    .list-toolbar {
+        border-bottom: 1px solid $default-line-color;
+        background-color: $color-white;
+        height: $inbox-list-toolbar-height;
+        .filter-active {
+            span {
+                color: $color-blue;
+            }
+        }
+    }
+    .k-drawer-items {
+        overflow: auto;
+        height: calc(100vh - #{$default-header-height} - #{$dashboard-tabs-height} - #{$inbox-list-toolbar-height}) !important;
+        .k-drawer-item {
+            display: block;
+            padding: 10px 10px 10px 15px;
+            .message-item {
+                position: relative;
+                display: table;
+                width: 100%;
+                min-height: 4.6rem;
+                .unread-bullet {
+                    display: none;
+                }
+                .unread-badge {
+                    position: absolute;
+                    top: calc(50% - 1px);
+                    right: 0;
+                }
+                .message-avatar {
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: $avatar-sm;
+                    padding-top: 4px;
+                    img {
+                        width: $avatar-sm;
+                        height: $avatar-sm;
+                    }
+                }
+                .message-preview {
+                    display: table-cell;
+                    vertical-align: middle;
+                    padding-left: 10px;
+                    .msg-topic {
+                        padding-right: 65px;
+                    }
+                    .msg-subject {
+                        font-size: $fontsize-md;
+                        color: $default-body-font-color;
+                        padding: 0 25px 0 0;
+                        line-height: 1.1em;
+                        margin-bottom: 0;
+                    }
+                }
+                .message-info {
+                    .msg-timestamp {
+                        position: absolute;
+                        right: 0;
+                        top: 0.4rem;
+                    }
+                    .etonicon {
+                        position: absolute;
+                        bottom: 13px;
+                        right: 0;
+                    }
+                    .filter-active {
+                        span {
+                            color: $color-blue;
+                        }
+                    }
+                }
+                &.unread-message {
+                    .unread-bullet {
+                        background-color: $color-blue;
+                        width: $indicator-size;
+                        height: $indicator-size;
+                        border-radius: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: -5px;
+                        display: block;
+                    }
+                    .msg-timestamp,
+                    .msg-subject {
+                        color: $color-blue;
+                        font-weight: bold;
+                    }
+                }
+            }
+            &.k-selected {
+                background-color: $color-blue-light;
+            }
+        }
+    }
+}
+
+.message-display {
+    display: table;
+    height: calc(100vh - #{$default-header-height} - #{$dashboard-tabs-height});
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    border-top: 1px solid $default-line-color;
+    .child {
+        display: table-cell;
+        height: 100%;
+        .sub-parent {
+            // display: block;
+            height: 100%;
+            display: table;
+            width: 100%;
+            .sub-child {
+                width: 100%;
+                display: table-row;
+                background-color: $color-white;
+                &.message-header {
+                    .table {
+                        width: 100%;
+                    }
+                    .table-cell {
+                        padding: 1rem 1rem 1rem 2rem;
+                        vertical-align: middle;
+                        .topic {
+                            color: $color-primary-dark;
+                            font-size: $fontsize-md;
+                        }
+                        .subject {
+                            line-height: 1.6rem !important;
+                        }
+                        &.right {
+                            .toolbar-search {
+                                display: inline-block;
+                            }
+                            .filter-wrapper {
+                                float: right;
+                                margin-left: 1.0rem;
+                            }
+                        }
+                        @include laptop-above {
+                            &.right {
+                                text-align: right;
+                                width: 26.0rem;
+                                .toolbar-search {
+                                    margin-top: 0.2rem;
+                                }
+                            }
+                        }
+                        @include laptop-below {
+                            display: block !important;
+                            width: 100%;
+                            &.right {
+                                padding-top: 0;
+                                .toolbar-search {
+                                    width: calc(100% - 5rem);
+                                    .search-input {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.scrollable {
+                    height: 100%;
+                    .content-wrapper {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        border-top: 1px solid $default-line-color;
+                        .content {
+                            overflow-y: auto;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            .message-content {
+                                .message-thread {
+                                    border-bottom: 1px solid $default-line-color;
+                                    .thread-header {
+                                        display: table;
+                                        width: 100%;
+                                        .table-cell {
+                                            &.left,
+                                            &.right {
+                                                vertical-align: top;
+                                                padding: 0.9rem 1.5rem;
+                                            }
+                                        }
+                                        .message-contact {
+                                            display: table;
+                                            width: 100%;
+                                            position: relative;
+                                            padding-left: 0.5rem;
+                                            .unread-bullet {
+                                                background-color: $color-blue;
+                                                width: $indicator-size;
+                                                height: $indicator-size;
+                                                border-radius: 100%;
+                                                position: absolute;
+                                                top: 0;
+                                                left: -5px;
+                                                display: block;
+                                            }
+                                            .contact-image {
+                                                width: $avatar-xs;
+                                                vertical-align: middle;
+                                                .round-avatar {
+                                                    width: $avatar-xs;
+                                                    height: $avatar-xs;
+                                                }
+                                            }
+                                            .contact-name {
+                                                vertical-align: middle;
+                                                padding-left: 10px;
+                                                .time {
+                                                    color: $color-primary-light;
+                                                    font-size: $fontsize-sm;
+                                                }
+                                            }
+                                        }
+                                        .message-attachment {
+                                            text-align: right;
+                                        }
+                                    }
+                                    .message-body {
+                                        padding: 0 2rem 2rem 2rem;
+                                        font-size: $default-body-font-size;
+                                        p {
+                                            font-size: $default-body-font-size;
+                                            line-height: 1.4em;
+                                        }
+                                    }
+                                }
+                            }
+                            .message-form {
+                                position: relative;
+                                .editor-attachment {
+                                    border: 0;
+                                    background-color: #f6f6f6;
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    z-index: 8;
+                                    height: 50px;
+                                    border-bottom: 1px solid #eee;
+                                    padding-right: 10px;
+                                    .k-button {
+                                        background: url("/assets/images/icon_attachment.svg") no-repeat center left 7px $color-white;
+                                        padding-left: 35px;
+                                        padding-right: 10px;
+                                    }
+                                }
+                                .k-editor {
+                                    border: 0;
+                                    height: 24rem;
+                                    .k-toolbar {
+                                        width: calc(100% - 150px);
+                                        height: 50px;
+                                        .k-button-icon {
+                                            border-radius: 0 !important;
+                                            &:hover {
+                                                border-radius: 0 !important;
+                                            }
+                                            &:active,
+                                            &:focus {
+                                                box-shadow: none !important;
+                                                background-color: $color-blue !important;
+                                            }
+                                            &.k-state-active {
+                                                background-color: $color-blue !important;
+                                                box-shadow: none !important;
+                                            }
+                                        }
+                                    }
+                                    .k-editor-content {
+                                        padding: 2.0rem;
+                                    }
+                                    .k-editor-content h1,h2,h3,h4,h6{
+                                        font: none !important;
+                                        color: black !important;
+                                        line-height: none !important;
+                                    }
+                                    .k-editor-content h5{
+                                        font: none !important; // Override
+                                        color: black !important;
+                                        text-transform: none !important;
+                                        letter-spacing: none !important;
+                                    }
+                                }
+                                .editor-footer {
+                                    padding: 2.0rem;
+                                    text-align: right;
+                                    .button {
+                                        min-width: 150px;
+                                        &:disabled {
+                                            background: grey;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.compose-new-message {
+    .subject-input {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .select-topic {
+        width: 50%;
+    }
+    .recipient-list-button {
+        margin-left: 20px;
+    }
+    .recipient-list-title {
+        display: flex;
+        border-bottom: 1px solid #e2e7f1;
+        h4 {
+            flex: 1;
+            padding: 0px 15px;
+            line-height: 3rem !important;
+        }
+        .close {
+            font-size: 2rem;
+        }
+    }
+    .recipient-list {
+        padding: 0 15px;
+        max-height: 300px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        h6 {
+            line-height: 2.5rem !important;
+        }
+    }
+    @include laptop-above {
+        .select-topic {
+            // max-width: 30rem;
+        }
+    }
+    .message-form {
+        height: 100%;
+        .k-editor {
+            height: calc(100% - 8rem) !important;
+        }
+    }
+}
+
+.attachment-button {
+    border: 1px solid $default-line-color;
+    border-radius: $default-border-radius;
+    padding: 0.5rem 1rem 0.6rem 2.5rem;
+    background-color: $color-white;
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    max-width: 140px;
+    margin-left: 0.6rem;
+    .file-icon {
+        position: absolute;
+        left: 1px;
+        top: calc(50% - 10px);
+    }
+    .file-name {
+        font-weight: 600;
+        display: block;
+        line-height: 1.4rem;
+        margin-left: 10px;
+    }
+    &:hover {
+        background-color: $color-gray-200;
+        cursor: pointer;
+    }
+    .file-size {
+        font-size: $fontsize-sm;
+        color: $color-primary-light;
+        margin-left: 10px;
+    }
+}
+
+// Dialog
+// .page-actions-billpay-list,
+.page-messages {
+    .k-dialog-wrapper {
+        padding: 0;
+        .k-dialog {
+            height: 100%;
+            border-radius: 0;
+            width: 100%;
+        }
+        .k-dialog-titlebar {
+            padding: 10px 20px 0 0;
+            .k-dialog-actions,
+            .k-dialog-action {
+                display: initial;
+                color: $color-primary-second;
+                &:hover {
+                    background-color: transparent !important;
+                }
+            }
+        }
+        .k-window-content {
+            padding: 0;
+            text-align: left;
+            .message-display {
+                border-top: 0;
+                height: calc(100vh - 5rem);
+            }
+        }
+    }
+}
+
+@media (min-width: 601px) {
+    // .page-actions-billpay-list,
+    .page-messages {
+        .k-dialog-wrapper {
+            .k-dialog {
+                height: calc(100% - 60px);
+                width: calc(100% - 60px);
+                border-radius: $default-border-radius;
+            }
+        }
+    }
+    .compose-new-message {
+        height: calc(100vh - 5rem - 60px) !important;
+        .message-form .k-editor {
+            height: calc(100% - 8rem - 60px) !important;
+            .k-toolbar> kendo-toolbar-renderer{
+                visibility: hidden;
+                display: none;
+            }
+        }
+    }
+    .k-editor-dialog .k-edit-form-container {
+    padding-top: 130px !important;
+}
+}
+
+// .page-actions-billpay-list,
+.page-messages {
+    .k-dialog-wrapper .k-dialog .k-dialog-titlebar .k-window-title {
+        padding-top: 10px;
+        padding-bottom: 10px !important;
+        text-align: left;
+    }
+    .k-editor-dialog .k-edit-label {
+        width: 20%;
+        padding-left: 30px;
+        
+        }
+        
+        .k-edit-label{
+            padding: 5px 20px;
+            width: 30%;
+            line-height: 1.4285714286;
+            text-align: inline-flex;
+            float: center;
+            clear: both;
+        }
+        .k-editor-dialog .k-edit-field {
+            width: 60%;
+            padding-right: 40px !important;
+            padding-bottom: 30px;
+        }
+        .k-edit-field {
+            margin: 0 0 1em 0;
+            width: 50%;
+            float: left !important;
+            /* clear: right; */
+        }
+        .page-messages .k-dialog-wrapper .k-window-content {
+            padding-left: 20px !important;
+            text-align: left !important;
+        }
+}
+
+.k-editor-dialog .k-edit-form-container {
+    padding-top: 130px !important;
+}
+.k-dialog-wrapper .k-dialog .k-dialog-buttongroup {
+    border: 0;
+    padding: 10px 90px 40px !important;
+    float: right;
+    display: block;
+}
+.k-dialog-buttongroup .k-button {
+    width: 38.5% !important;
+}
+.k-checkbox {
+    width: 16px !important;
+    border-radius: 2px;
+    margin: 0;
+    padding-right: 5px;
+    height: 16px;
+    line-height: initial;
+    border-width: 1px;
+    border-style: solid;
+    outline: 0;
+    box-sizing: border-box;
+}
+.k-checkbox-label {
+    margin: 0;
+    line-height: 17px;
+    padding: 5px 20px;
+    line-height: 1.4285714286;
+    text-align: inline-flex;
+    clear: both;
+    cursor: pointer;
+}
