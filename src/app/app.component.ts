@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DialogService } from '@progress/kendo-angular-dialog';
-import { LoginFormComponent } from './core/login/login-form/login-form.component';
+import { LoginFormComponent } from './modules/login-form/login-form.component';
 
 @Component({
   selector: 'app-root',

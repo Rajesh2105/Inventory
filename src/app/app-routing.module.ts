@@ -6,9 +6,12 @@ import { LoginComponent } from './modules/login/login.component';
 
 
 const routes: Routes = [
-
-  { path: 'login', component: LoginComponent },
   {
+    path:'default',
+    component:DefaultComponent
+  },
+  { path: 'login', component: LoginComponent },
+  /* {
     path: '',
     component: LoginComponent,
     // canActivate: [MsalGuard],
@@ -21,8 +24,8 @@ const routes: Routes = [
       // },
      
     ]
-  },
-  { path: '**', redirectTo: '' }
+  }, */
+  
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

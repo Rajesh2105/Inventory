@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
   }
 
   doLogin() {
-
+    
     const dialog: DialogRef = this.dialogService.open({
       title: "Login Details",
       content: LoginFormComponent,

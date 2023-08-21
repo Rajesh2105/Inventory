@@ -10,16 +10,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { InputsModule } from '@progress/kendo-angular-inputs';
-import { LoginComponent } from './core/login/login.component';
-// import { LoginFormComponent } from './core/login/login-form/login-form.component';
-import { CommonModule } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { DefaultComponent } from './layout/default.component';
 import { SidebarComponent } from './components/sidebar/sidebar-nav/sidebar.component';
 import { LoginFormComponent } from './modules/login-form/login-form.component';
-import { GridLayoutModule, LayoutModule } from '@progress/kendo-angular-layout';
+import { LayoutModule } from '@progress/kendo-angular-layout';
 import { PopupModule } from '@progress/kendo-angular-popup';
 import { MatMenuModule } from '@angular/material/menu';
+import { LoginModule } from './modules/login/login.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +28,7 @@ import { MatMenuModule } from '@angular/material/menu';
   ],
   imports: [
     BrowserModule,
+    LoginModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
