@@ -1,0 +1,55 @@
+<mat-toolbar class="header-wrapper">
+    <mat-toolbar-row class="nav-header">
+        
+        <div kendoTooltip tooltipClass="header-tooltip" class="nav-list">
+            <a class="nav-link toggle-menu" (click)="toggleSideBarFun()">
+                <span class="etonicon icon-menu"></span>
+                <!-- <span class="admin-dashboard">MANAGEMENT DASHBOARD</span> -->
+            </a> 
+            <a class="nav-link" routerLinkActive="active-nav-link" routerLink="/dashboard"><span class="etonicon"
+                [title]="'HOME' | translate">
+                <img class="header-icons" alt="" src="assets/images/Home.png">
+            </span>
+            <span class="link-text">{{ 'HOME' | translate }}</span></a>
+        <a *ngIf="exclusions.indexOf('actions') === -1" class="nav-link" routerLinkActive="active-nav-link"
+            routerLink="/actions"><span class="etonicon" [title]="'ACTIONS' | translate">
+                <img class="header-icons" alt="" src="assets/images/Actions.png">
+            </span>
+            <span class="link-text">{{ 'ACTIONS' | translate }}</span></a>
+        <a *ngIf="exclusions.indexOf('documents') === -1" class="nav-link" routerLinkActive="active-nav-link"
+            routerLink="/documents"><span class="etonicon" [title]="'DOCUMENTS' | translate">
+                <img class="header-icons" alt="" src="assets/images/Documents.png">
+            </span>
+            <span class="link-text">{{ 'DOCUMENTS' | translate }}</span></a>
+        <a *ngIf="exclusions.indexOf('messages') === -1" class="nav-link" routerLinkActive="active-nav-link"
+            routerLink="/messages"><span class="etonicon" [title]="'MESSAGES' | translate"><img class="header-icons"
+                    alt="" src="assets/images/Messaging.png"></span>
+            <span class="link-text">{{ 'MESSAGES' | translate }}</span></a>
+       
+
+         </div> 
+        <div class="nav-end" fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <ul fxLayout="row" fxLayoutGap="10px">
+                <li>
+                    <div class="header-profile">
+                        <button mat-button [matMenuTriggerFor]="menu">
+                            <img class="round-avatar" src="assets/images/avatar_default.svg" alt="Steven Adams">
+                            <span>{{LoggedInUserName}}</span>
+                            <span class="etonicon icon-caret-down"></span>
+                        </button>
+                        
+                        <mat-menu #menu="matMenu">
+                            <button (click)="logout()" class="header-signout" mat-menu-item>
+                                <span class="etonicon icon-arrow-right"></span>
+                                <span> {{ 'SIGN_OUT' | translate }} </span>
+                            </button>
+                        </mat-menu>
+                      
+                    </div>
+                     
+                </li>
+             
+            </ul>  
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,48 @@
+<div class="sidebar-logo filter-ver">
+    <div class="table-cell">
+        <img src="assets/images/logo_sidebar.png" class="logo" alt="logo" />
+    </div>
+</div>
+
+<div class="scrollable-wrapper">
+    <div class="scrollable-inner">
+        <kendo-treeview
+        (collapse)="handleCollapse($event)"
+         (expand)="handleExpand($event)"
+        class="filter-wrapper"
+        [(expandedKeys)]=expandedKeys
+        [nodes]="periodFilters" textField="name"
+         kendoTreeViewExpandable 
+         [kendoTreeViewSelectable]="selection"
+        kendoTreeViewHierarchyBinding childrenField="items" 
+        (selectionChange)="handleFilterSelection('documentContentCategory', $event)
+      " [(selectedKeys)]="selectedDocumentFilterKey"
+      [(selectedKeys)]="selectedKeys"
+      >
+          <ng-template kendoTreeViewNodeTemplate let-dataItem>
+            <div *ngIf="!dataItem.isSearch">
+                {{ dataItem.items ?  ( dataItem.name | translate) : dataItem.name}}
+            </div>
+          
+        </ng-template>
+
+    </kendo-treeview>
+      
+     
+      
+    </div>
+</div>
+
+<div class="sidebar-footer">
+    <!-- <div class="sidebar-footer-logo"> -->
+    <ul *ngIf="showDocs" class="downloadable">
+        <li><a>Privacy Policy</a></li>
+        <li><a >Code of Ethics</a></li>
+        <li><a>Form ADV</a></li>
+    </ul>
+
+</div>
+<div class="side-footer-logo">
+    <h5 class="powered-by">Powered by Eton Solutions</h5>
+    <img src="assets/images/AtlasFive/AtlasFive-logo@2x.png" alt="logo" />
+</div>

@@ -1,446 +1,381 @@
 .table-wrapper {
-  background-color: transparent;
-  height: 100%;
-  position: relative;
-  .k-grid {
     background-color: transparent;
-    border: 0;
     height: 100%;
-    td,
-    th {
-      border-width: 0 0 1px 0px;
-      padding: 6px 15px;
-      border-color: $default-line-color;
-      color: $default-body-font-color;
-      font-size: $fontsize-menu;
-    }
-    // th {
-    //   color: $color-primary-dark;
-    // }
-    tr {
-      &.k-alt {
-        background-color: $color-white;
-      }
-      &:hover {
-        background-color: #f1f5f9;
-      }
-    }
-    // td:hover {
-    //     background-color: $color-gray-10;
-    // }
-    .k-filter-row td:hover,
-    th:hover {
-      background-color: $color-gray-200;
-    }
-    .k-grid-header-wrap {
-      border-right: 0;
-    }
-    th {
-      .k-link {
-        position: relative;
-        .k-sort-icon {
-          .k-icon-wrapper-host .k-svg-icon{
-            svg{
-            display: none;
-            }
-          &:before,
-          &:after {
-            border: 4px solid transparent;
-            content: "";
-            display: block;
-            height: 0;
-            right: 10px;
-            top: 50%;
-            position: absolute;
-            width: 0;
-          }
-          &:before {
-            border-bottom-color: $color-gray-600;
-            margin-top: -9px;
-          }
-          &:after {
-            border-top-color: $color-gray-600;
-            margin-top: 1px;
-          }
-          &.k-svg-i-sort-asc-small {
-            &:before {
-              border-bottom-color: $color-blue;
-            }
-          }
-          &.k-svg-i-sort-desc-small {
-            &:after {
-              border-top-color: $color-blue;
-            }
-          }
+    position: relative;
+    .k-grid {
+        background-color: transparent;
+        border: 0;
+        height: 100%;
+        td,
+        th {
+            border-width: 0 0 1px 0px;
+            padding: 6px 15px;
+            border-color: $default-line-color;
+            color: $default-body-font-color;
+            font-size: $fontsize-menu;
         }
-        }
-      }
-    }
-  }
-  .k-grid-toolbar {
-    background-color: transparent;
-    padding: 10px;
-    border-bottom: 1px solid $color-gray-400;
-    .table-toolbar {
-      display: table;
-      width: 100%;
-      .toolbar-search {
-        @include placeholder($color-gray-600);
-        width: 250px;
-        vertical-align: top;
-        input {
-          width: 100%;
-        }
-      }
-      .toolbar-filter {
-        padding-left: 10px;
-        position: relative;
-        vertical-align: top;
-        text-align: left;
-        white-space: nowrap;
-        .k-dropdown {
-          width: 200px;
-        }
-        .filter-field {
-          position: absolute;
-          top: 0;
-          left: 10px;
-          .filter-new {
-            width: 200px;
-          }
-          .filter-save {
-            margin-left: 10px;
-          }
-        }
-      }
-      .toolbar-filter-reset {
-        width: 70px;
-        text-align: right;
-        vertical-align: middle;
-        .reset-filters {
-          color: $color-blue;
-          white-space: nowrap;
-          font-size: $fontsize-sm;
-          &:hover {
-            color: $color-blue-dark;
-            cursor: pointer;
-          }
-        }
-      }
-      .toolbar-end {
-        // width: 102px;
-        text-align: right;
-        .toggle-filter,
-        .column-picker {
-          float: right;
-          margin-left: 10px;
-          .k-icon-button:hover {
-            background-color: $color-white !important;
-          }
-          .k-icon-button {
-            padding: 0;
-            &:before {
-              background-color: transparent;
-              border-color: transparent;
-            }
-          }
-          .k-button-icon.k-focus{
-            border-color: $color-white;
-          } 
-          .k-button-icon.k-svg-icon {
-            font-size: $iconsize-22;
-            border-color: $color-white;
-
-            @include etonicon;
-            &:before {
-              top: 7px;
-              left: 2px;
-              right: 3px;
-              position: absolute;
-              content: "\e82f"; //icon-config
-            }
-            svg {
-              display: none;
-              &:hover {
-                background-color: transparent;
-              }
-            }
-          }
-        }
-        .filter-active {
-          background-color: $color-blue;
-          .etonicon {
-            color: $color-white;
-          }
-        }
-      }
-      .toolbar-export {
-        width: 47px;
-        text-align: right;
-        .icon-button {
-          float: right;
-        }
-      }
-      .toolbar-right-group {
-        float: right;
-        padding-right: 5px;
-      }
-      @media (max-width: 690px) {
-        .toolbar-filter,
-        .toolbar-right-group {
-          display: block;
-        }
-        .toolbar-filter {
-          padding-left: 0;
-          .k-dropdown {
-            width: 100% !important;
-            padding-bottom: 10px;
-          }
-        }
-      }
-    }
-  }
-  .k-grid td.k-selected, .k-grid .k-table-row.k-selected > td, .k-grid .k-table-td.k-selected, .k-grid .k-table-row.k-selected > td.k-table-td {
-    background-color: rgba(3, 155, 229, 0.25) !important;
-}
-  .k-grid-aria-root {
-    margin-bottom: 36px;
-    .k-grid-header {
-      background-color: $color-gray-200;
-      color: $color-primary-dark;
-      .k-table-th{
-        position: relative;
-        vertical-align: middle;
-      }
-      .k-grid-header-wrap > .k-table > .k-table-thead {
-        background-color: $color-gray-200;
-        color: $color-primary-dark;
-        & tr > th {
-          padding: 8px 15px;
-          font-weight: 700;
-          border-bottom: 0;
-          font-size: $fontsize-menu;
-        }
-
-        .k-filter-row {
-          td {
-            padding: 0 12px 10px 12px;
-          }
-          .k-filtercell-wrapper {
-            position: relative;
-            .k-textbox,.k-input-solid {
-              padding-right: 35px;
-              &.k-focus{
-                box-shadow: none;
-                border-color:none;
-              }
+        // th {
+        //   color: $color-primary-dark;
+        // }
+        tr {
+            &.k-alt {
+                background-color: $color-white;
             }
             &:hover {
-              background: transparent;
-              color: $color-primary-second;
+                background-color: #f1f5f9;
             }
-            .k-filtercell-operator {
-              position: absolute;
-              top: 0;
-              right: 0;
-              
-              .k-icon-button {
-                background: transparent;
-                color: $color-gray-600;
-                &.k-focus{
-                  box-shadow: none;
+        }
+        // td:hover {
+        //     background-color: $color-gray-10;
+        // }
+        .k-filter-row td:hover,
+        th:hover {
+            background-color: $color-gray-200;
+        }
+        .k-grid-header-wrap {
+            border-right: 0;
+        }
+        th {
+            .k-link {
+                position: relative;
+                .k-icon {
+                    &:before,
+                    &:after {
+                        border: 4px solid transparent;
+                        content: "";
+                        display: block;
+                        height: 0;
+                        right: 10px;
+                        top: 50%;
+                        position: absolute;
+                        width: 0;
+                    }
+                    &:before {
+                        border-bottom-color: $color-gray-600;
+                        margin-top: -9px;
+                    }
+                    &:after {
+                        border-top-color: $color-gray-600;
+                        margin-top: 1px;
+                    }
+                    &.k-i-sort-asc-sm {
+                        &:before {
+                            border-bottom-color: $color-blue;
+                        }
+                    }
+                    &.k-i-sort-desc-sm {
+                        &:after {
+                            border-top-color: $color-blue;
+                        }
+                    }
                 }
-                
-                .k-icon-wrapper-host>.k-svg-icon {
-                  color: $color-primary-light !important;
-                  font-size: $iconsize-20;
-                  @include etonicon;
-                  &:before {
+            }
+        }
+    }
+    .k-grid-toolbar {
+        background-color: transparent;
+        padding: 10px;
+        border-bottom: 1px solid $color-gray-400;
+        .table-toolbar {
+            display: table;
+            width: 100%;
+            .toolbar-search {
+                @include placeholder($color-gray-600);
+                width: 250px;
+                vertical-align: top;
+                input {
+                    width: 100%;
+                }
+            }
+            .toolbar-filter {
+                padding-left: 10px;
+                position: relative;
+                vertical-align: top;
+                text-align: left;
+                white-space: nowrap;
+                .k-dropdown {
+                    width: 200px;
+                }
+                .filter-field {
                     position: absolute;
-                    top: 6px;
-                    left: 12px;
-                    content: "\e848"; //icon-filter-clear
-                  }
-				          svg{
-				            display:none;
-				          }
-                  &:hover{
-                    background-color: $color-white !important;
-                    color: $color-primary-light;
-                  }
+                    top: 0;
+                    left: 10px;
+                    .filter-new {
+                        width: 200px;
+                    }
+                    .filter-save {
+                        margin-left: 10px;
+                    }
                 }
-                
-              }
             }
-          }
-          .k-datepicker {
-            + .k-filtercell-operator {
-              position: absolute;
-              top: 0;
-              flex-direction: row-reverse;
+            .toolbar-filter-reset {
+                width: 70px;
+                text-align: right;
+                vertical-align: middle;
+                .reset-filters {
+                    color: $color-blue;
+                    white-space: nowrap;
+                    font-size: $fontsize-sm;
+                    &:hover {
+                        color: $color-blue-dark;
+                        cursor: pointer;
+                    }
+                }
             }
-          }
-          .date-range-filter > .k-daterangepicker {
-            white-space: normal;
-            flex-direction: column;
-            align-items: baseline;
-          }
+            .toolbar-end {
+                // width: 102px;
+                text-align: right;
+                .toggle-filter,
+                .column-picker {
+                    float: right;
+                    margin-left: 10px;
+                    .k-icon {
+                        font-size: $iconsize-22;
+                        @include etonicon;
+                        &:before {
+                            content: "\e82f"; //icon-config
+                        }
+                    }
+                }
+                .filter-active {
+                    background-color: $color-blue;
+                    .etonicon {
+                        color: $color-white;
+                    }
+                }
+            }
+            .toolbar-export {
+                width: 47px;
+                text-align: right;
+                .icon-button {
+                    float: right;
+                }
+            }
+            .toolbar-right-group {
+                float: right;
+                padding-right: 5px;
+            }
+            @media (max-width: 690px) {
+                .toolbar-filter,
+                .toolbar-right-group {
+                    display: block;
+                }
+                .toolbar-filter {
+                    padding-left: 0;
+                    .k-dropdown {
+                        width: 100% !important;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
         }
-      }
     }
-  }
-  .k-command-cell {
-    white-space: nowrap;
-    .button {
-      margin-right: 10px;
-      font-size: $fontsize-menu;
-      padding-top: 6px;
-    }
-    .k-menu {
-      display: inline-block;
-      width: 45px;
-      .k-item {
-        background: url("/assets/images/icon_more.svg") no-repeat center center;
-        box-shadow: none;
-        opacity: 0.7;
-        text-indent: -999px;
-        .k-icon {
-          display: none;
+    .k-grid-aria-root {
+        margin-bottom: 36px;
+        .k-grid-header {
+            background-color: $color-gray-200;
+            color: $color-primary-dark;
+            &>.k-link {
+                padding: 8px 15px;
+            }
+            .k-grid-header-wrap {
+                tr th {
+                    font-weight: 700;
+                    border-bottom: 0;
+                    font-size: $fontsize-menu;
+                }
+                .k-filter-row {
+                    td {
+                        padding: 0 12px 10px 12px;
+                    }
+                    .k-filtercell-wrapper {
+                        position: relative;
+                        .k-filtercell-operator {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            .k-textbox {
+                                padding-right: 35px;
+                            }
+                            .k-button-icon {
+                                background: transparent;
+                                color: $color-gray-600;
+                                &:hover {
+                                    background: transparent;
+                                    color: $color-primary-second;
+                                }
+                                .k-icon {
+                                    color: $color-primary-light !important;
+                                    font-size: $iconsize-20;
+                                    @include etonicon;
+                                    &:before {
+                                        content: "\e848"; //icon-filter-clear
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .k-datepicker {
+                        +.k-filtercell-operator {
+                            right: 40px;
+                        }
+                    }
+                    .date-range-filter {
+                        white-space: normal;
+                        flex-direction: column;
+                    }
+                }
+            }
         }
-        &:hover {
-          opacity: 1;
-        }
-      }
     }
-  }
-  .k-grid-content {
-    // height: calc(100% - #{$table-footer-height});
-    // margin-bottom: $table-footer-height;
-    overflow: auto;
-  }
-  .k-toolbar .k-picker {
-    width: 10em;
-    z-index: 0;
-}
-  .table-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: $color-gray-200;
-    text-align: right;
-    padding: 10px 15px 0;
-    font-weight: 600;
-    border-top: 1px solid $default-line-color;
-    height: $table-footer-height;
-    color: $color-primary-second;
-    font-size: $fontsize-sm;
-  }
-  // Responsive
-  @media (max-width: 1119px) {
-    .table-toolbar {
-      .toolbar-search {
-        width: 160px !important;
-      }
-      .toolbar-filter {
-        .k-dropdown,
-        .filter-field .filter-new {
-          width: 140px !important;
+    .k-command-cell {
+        white-space: nowrap;
+        .button {
+            margin-right: 10px;
+            font-size: $fontsize-menu;
+            padding-top: 6px;
         }
-      }
+        .k-menu {
+            display: inline-block;
+            width: 45px;
+            .k-item {
+                background: url("/assets/images/icon_more.svg") no-repeat center center;
+                box-shadow: none;
+                opacity: 0.7;
+                text-indent: -999px;
+                .k-icon {
+                    display: none;
+                }
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
     }
-  }
-  @media (max-width: 939px) {
-    .table-toolbar {
-      margin-top: 4.7rem;
-      .toolbar-search {
+    .k-grid-content {
+        // height: calc(100% - #{$table-footer-height});
+        // margin-bottom: $table-footer-height;
+        overflow: auto;
+    }
+    .table-footer {
         position: absolute;
-        top: 12px;
-        left: 10px;
-        width: calc(100% - 20px) !important;
-      }
-      .toolbar-filter {
-        padding-left: 0 !important;
-      }
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: $color-gray-200;
+        text-align: right;
+        padding: 10px 15px 0;
+        font-weight: 600;
+        border-top: 1px solid $default-line-color;
+        height: $table-footer-height;
+        color: $color-primary-second;
+        font-size: $fontsize-sm;
     }
-  }
-  .k-grouping-header {
-    background-color: $color-white;
-    .k-grouping-drop-container {
-      font-size: $fontsize-sm;
-      font-style: italic;
-      color: $color-gray-800;
-      padding-left: 12px;
+    // Responsive
+    @media (max-width: 1119px) {
+        .table-toolbar {
+            .toolbar-search {
+                width: 160px !important;
+            }
+            .toolbar-filter {
+                .k-dropdown,
+                .filter-field .filter-new {
+                    width: 120px !important;
+                }
+            }
+        }
     }
-    .k-group-indicator {
-      padding: 0 0 0 8px;
-      height: 28px;
-      color: $color-black;
-      border-radius: $default-border-radius;
-      border-color: $default-line-color;
+    @media (max-width: 939px) {
+        .table-toolbar {
+            margin-top: 4.7rem;
+            .toolbar-search {
+                position: absolute;
+                top: 12px;
+                left: 10px;
+                width: calc(100% - 20px) !important;
+            }
+            .toolbar-filter {
+                padding-left: 0 !important;
+            }
+        }
     }
-  }
+    .k-grouping-header {
+        background-color: $color-white;
+        .k-indicator-container {
+            font-size: $fontsize-sm;
+            font-style: italic;
+            color: $color-gray-800;
+            padding-left: 12px;
+        }
+        .k-group-indicator {
+            padding: 0 0 0 8px;
+            height: 28px;
+            color: $color-black;
+            border-radius: $default-border-radius;
+            border-color: $default-line-color;
+        }
+    }
 }
 
 .k-datepicker .k-state-default:hover {
-  background: white !important;
+    background: white !important;
 }
 
 .k-filter-row {
-  .k-filtercell-wrapper:hover {
-    background: white;
-  }
+    .k-filtercell-wrapper:hover {
+        background: white;
+    }
 }
 
 .k-column-chooser-title,
 .k-column-list-item {
-  padding: 5px 12px;
+    padding: 5px 12px;
 }
 
 .k-column-list-item {
-  position: relative;
-  .k-checkbox {
-    position: absolute;
-    top: 9px;
-    left: 12px;
-    + .k-checkbox-label {
-      display: block;
-      padding: 2px 12px 3px 25px;
+    position: relative;
+    .k-checkbox {
+        position: absolute;
+        top: 9px;
+        left: 12px;
+        +.k-checkbox-label {
+            display: block;
+            padding: 2px 12px 3px 25px;
+        }
     }
-  }
 }
 
 .k-column-chooser-title {
-  font-size: $fontsize-sm;
-  text-transform: uppercase;
-  color: $color-primary-light;
-  letter-spacing: 0.07rem;
-  font-weight: 600;
+    font-size: $fontsize-sm;
+    text-transform: uppercase;
+    color: $color-primary-light;
+    letter-spacing: 0.07rem;
+    font-weight: 600;
 }
 
 .k-column-list {
-  + .k-action-buttons {
-    border: 0;
-    padding: 2px 12px;
-    margin-top: 7px;
-    .k-button {
-      font-size: $fontsize-sm;
-      padding: 0;
-      height: 31px;
-      border-radius: $default-border-radius;
-      margin-right: 7px;
-      background-color: $color-gray-200;
-      &.k-primary {
-        margin-right: 0;
-        &:hover {
-          background-color: $color-blue-dark;
+    +.k-action-buttons {
+        border: 0;
+        padding: 2px 12px;
+        margin-top: 7px;
+        .k-button {
+            font-size: $fontsize-sm;
+            padding: 0;
+            height: 31px;
+            border-radius: $default-border-radius;
+            margin-right: 7px;
+            background-color: $color-gray-200;
+            &.k-primary {
+                margin-right: 0;
+                &:hover {
+                    background-color: $color-blue-dark;
+                }
+            }
+            &:focus {
+                box-shadow: none;
+            }
         }
-      }
-      &:focus {
-        box-shadow: none;
-      }
     }
-  }
 }
 
 // Override
@@ -472,42 +407,37 @@ tbody .k-group-cell,
 .k-chart ::selection,
 .k-sparkline ::selection,
 .k-stockchart ::selection {
-  background-color: $color-gray-200;
-  color: inherit;
+    background-color: $color-gray-200;
+    color: inherit;
 }
 
 .k-calendar .k-footer .k-nav-today,
 .k-calendar .k-calendar-header .k-today,
 .k-calendar .k-content .k-today,
 .k-calendar-navigation .k-content li:hover {
-  color: $color-blue;
-  &:hover {
-    color: $color-blue-dark;
-  }
+    color: $color-blue;
+    &:hover {
+        color: $color-blue-dark;
+    }
 }
 
-.k-calendar .k-selected .k-link {
-  background-color: $color-blue !important;
-  border-radius: 100%;
-  &:hover{
-    background-color: $color-blue !important;
-    color:$color-white;
+.k-calendar .k-state-selected .k-link {
+    background-color: $color-blue;
     border-radius: 100%;
-  }
 }
 
 .k-drawer-wrapper {
-  transition: none;
-  height: 100%;
+    transition: none;
+    height: 100%;
 }
 
 .debit-amount {
-  color: red;
+    color: red;
 }
 .vertical-middle {
   vertical-align: middle;
 }
 
 .k-grid .k-grouping-row {
-  text-align: right !important;
+    text-align: right !important;
 }

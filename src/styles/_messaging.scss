@@ -116,7 +116,7 @@ $inbox-list-toolbar-height: 67px;
                     }
                 }
             }
-            &.k-selected {
+            &.k-state-selected {
                 background-color: $color-blue-light;
             }
         }
@@ -460,10 +460,6 @@ $inbox-list-toolbar-height: 67px;
         height: calc(100vh - 5rem - 60px) !important;
         .message-form .k-editor {
             height: calc(100% - 8rem - 60px) !important;
-            .k-toolbar> kendo-toolbar-renderer{
-                visibility: hidden;
-                display: none;
-            }
         }
     }
     .k-editor-dialog .k-edit-form-container {

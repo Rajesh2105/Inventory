@@ -1,0 +1,86 @@
+<mat-toolbar class="header-wrapper">
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="toggleSideBarFun()">
+            <span class="etonicon icon-menu"></span>
+        </button>
+
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <ul fxLayout="row" fxLayoutGap="10px">
+                <li>
+                    <button mat-icon-button>
+                        <span class="etonicon icon-search"></span>
+                    </button>
+                </li>
+
+                <li>
+                    <div class="header-profile">
+                        <button mat-button [matMenuTriggerFor]="menu">
+                            <img class="round-avatar" src="assets/images/avatar_default.svg" alt="Steven Adams">
+                            <span>{{LoggedInUserName}}</span>
+                            <span class="etonicon icon-caret-down"></span>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item>{{ 'PROFILE' | translate }}</button>
+                            <button mat-menu-item>{{ 'SETTINGS' | translate }}</button>
+                            <button (click)="logout()" class="header-signout"
+                                mat-menu-item>{{ 'SIGN_OUT' | translate }}</button>
+                        </mat-menu>
+                    </div>
+                </li>
+
+                <li>
+                    <button mat-icon-button>
+                        <span class="etonicon icon-messaging"></span>
+                    </button>
+                    <span class="unread-badge">3</span>
+                </li>
+                <li>
+                    <button mat-icon-button>
+                        <span class="etonicon icon-notification"></span>
+                    </button>
+                    <span class="unread-badge">4</span>
+                </li>
+                <li>
+                    <button mat-icon-button>
+                        <span class="etonicon icon-chatbot"></span>
+                    </button>
+                    <span class="unread-badge">5</span>
+                </li>
+
+            </ul>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-toolbar class="header-filter-wrapper">
+    <mat-toolbar-row>
+        <div class="row">
+            <div class="col col-sm-half">
+                <label>{{ 'RELATIONSHIPS' | translate }}</label>
+                <mat-form-field class="header-filter">
+                    <mat-select placeholder="RELATIONSHIP" [(value)]="relSelected">
+                        <mat-option *ngFor="let rel of relationship" [value]="rel.value">
+                            {{rel.viewValue | translate}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col col-sm-half">
+                <label>{{ 'PORTFOLIO' | translate }}</label>
+                <mat-form-field class="header-filter">
+                    <mat-select [formControl]="portCtrl" placeholder="PORTFOLIO" #singleSelect [(value)]="portSelected">
+                        <mat-option>
+                            <ngx-mat-select-search placeholderLabel="Search keyword"
+                                noEntriesFoundLabel="no matching portfolio found" [formControl]="portFilterCtrl">
+                            </ngx-mat-select-search>
+                        </mat-option>
+
+                        <mat-option *ngFor="let port of filteredPortfolio | async" [value]="port">
+                            {{port.viewValue | translate}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

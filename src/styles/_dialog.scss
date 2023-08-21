@@ -30,7 +30,6 @@
                 display: none;
             }
             &.with-close {
-                .k-dialog-titlebar-actions{display:none;}
                 .close {
                     width: 70px;
                     height: 60px;
@@ -130,9 +129,7 @@
         }
     }
 }
-kendo-svg-icons{
-    display:none !important;
-  }
+
 // General Dialog Details
 .dialog-details-wrapper {
     +.k-window-content {
@@ -202,13 +199,12 @@ kendo-svg-icons{
                         font-size: $fontsize-menu;
                         padding-left: 25px;
                         color: $default-body-font-color;
-                        &.k-selected {
+                        &.k-state-selected {
                             background-color: transparent;
                             color: $color-blue;
                             border-right: 4px solid $color-blue;
                             font-weight: 700;
                             cursor: default;
-                            box-shadow: none;
                         }
                         .k-item-text {
                             padding-left: 10px;

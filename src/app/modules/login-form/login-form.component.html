@@ -1,0 +1,32 @@
+<div class="example-wrap">
+    <form class="k-form" [formGroup]="registerForm">
+        <fieldset class="k-form-fieldset">
+            <!-- <legend class="k-form-legend">User Details</legend> -->
+            <kendo-formfield>
+                <kendo-label [for]="userName" text="User Name"></kendo-label>
+                <input formControlName="userName" kendoTextBox #firstName required/>
+
+                <kendo-formhint>Your user name</kendo-formhint>
+                <kendo-formerror>Error: User name is required</kendo-formerror>
+            </kendo-formfield>
+
+            <kendo-formfield>
+                <kendo-label [for]="password" text="Password"></kendo-label>
+                <input formControlName="password" kendoTextBox #lastName required/>
+
+                <kendo-formhint>Your password</kendo-formhint>
+                <kendo-formerror>Error: Password is required</kendo-formerror>
+            </kendo-formfield>
+
+           
+
+
+           
+
+            <div class="k-form-buttons">
+                <button type="button" class="btn btn-primary" (click)="submitForm()">Submit</button>
+                <button type="button" class="btn btn-info" kendoButton (click)="clearForm()">Clear</button>
+            </div>
+        </fieldset>
+    </form>
+</div>

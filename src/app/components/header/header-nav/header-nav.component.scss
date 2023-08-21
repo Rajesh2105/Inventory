@@ -1,0 +1,75 @@
+.nav-list {
+    display: flex;
+
+    .nav-link.active-nav-link {
+        .link-text {
+            display: inline-block;
+        }
+    }
+    .nav-link {
+        // border-radius: 0% !important;
+        .link-text {
+            display: none;
+        }
+    }
+}
+
+.header-icons {
+    width: 30px;
+    height: 27px;
+}
+.myMenu {
+    padding: 0px;
+    margin: 0px;
+    height: auto;
+}
+.myMenuItem {
+    color: #2d4b64;
+    font-family: "Source Sans Pro", arial, sans-serif !important;
+    font-size: 15px;
+    // display: flex;
+    padding: auto;
+    margin: auto;
+    //   height: 35px;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+
+    width: 100%;
+  
+}
+button.myMenuItem:hover {
+    background-color:#F5F5F5;
+    // color: #fff !important;
+}
+
+.user-text {
+    float: left;
+    position: relative;
+    top: 5;
+}
+
+.checked-icon {
+    float: right;
+    top: 4px;
+    position: relative;
+    left: 15px;
+}
+.checked-impiconicon {
+    float: right;
+    top: 4px;
+    position: relative;
+    left: 10px;
+}
+.impdiv {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    bottom: 6px;
+}
+
+// ::ng-deep .impCustomise {
+//    position: relative;
+//    right: 48%;
+   
+//   }

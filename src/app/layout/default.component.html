@@ -1,0 +1,10 @@
+<mat-sidenav-container autosize class="sidebar-container">
+    <mat-sidenav #sidenav mode="side" [opened]="sideBarOpen" class="sidebar-wrapper">
+        <app-sidebar></app-sidebar>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

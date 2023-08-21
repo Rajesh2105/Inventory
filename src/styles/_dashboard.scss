@@ -5,9 +5,8 @@
 .dashboard-wrapper {
     position: relative;
     @include second-tab-header;
-    .k-tabstrip-items-wrapper>.k-tabstrip-items {
+    .k-tabstrip-items {
         padding: 0 3px;
-        overflow-x: auto;
         border-bottom-width: 0; // Override
         background-color: $color-white;
         @include shadow-box;
@@ -28,15 +27,13 @@
         .k-item {
             color: $color-gray-800;
             margin-bottom: 0;
-            border-radius: 0 solid $color-white;
+            border-radius: 0;
             border: 0;
             padding: 8px 28px;
-            box-shadow: none;
-            &.k-active {
+            &.k-state-active {
                 .k-item {
                     padding: 0;
                     box-shadow: none;
-                    border-color:  transparent;
                 }
                 .k-link {
                     color: $color-blue;
@@ -44,18 +41,10 @@
                     position: relative;
                     padding: 0;
                     margin-right: -2px;
-                
                     &:hover {
                         color: $color-blue-dark;
                     }
-                
-                    .k-menu-link-text {
-                        &:hover {
-                            color: $color-blue-dark;
-                        }
-                    }
-                
-                    .k-menu-expand-arrow > .k-icon {
+                    .k-menu-expand-arrow {
                         position: absolute;
                         top: calc(50% - 3px);
                         right: -14px;
@@ -68,7 +57,6 @@
                             display: none;
                         }
                     }
-                    
                 }
                 &:after {
                     content: "";
@@ -80,7 +68,6 @@
                     left: calc(50% - 17px);
                     background-color: $color-blue;
                 }
-                
             }
         }
         .k-menu:not(.k-context-menu)>.k-item {
@@ -121,11 +108,10 @@
     h5 {
         padding: 8px 12px;
     }
-    .k-list>.k-list-content>.k-list-ul {
-        >.k-list-item {
+    .k-list {
+        >.k-item {
             display: block !important;
             padding: 8px 12px;
-            box-shadow: none;
             span {
                 display: inline-block;
                 line-height: 18px;
@@ -159,13 +145,11 @@
     }
 }
 
-.k-list .k-list-item.k-selected,
-.k-list-optionlabel.k-selected {
-    box-shadow: none;
+.k-list .k-item.k-state-selected,
+.k-list-optionlabel.k-state-selected {
     background-color: $color-gray-200;
     color: $color-blue;
     font-weight: 600;
-    border-color: transparent;
     &:hover {
         background-color: $color-gray-200;
         color: $color-blue-dark;
@@ -173,9 +157,9 @@
 }
 
 .k-list .k-item:focus,
-.k-list .k-item.k-focus,
+.k-list .k-item.k-state-focused,
 .k-list-optionlabel:focus,
-.k-list-optionlabel.k-focus {
+.k-list-optionlabel.k-state-focused {
     box-shadow: none;
 }
 
@@ -203,7 +187,6 @@
                 padding: 6px;
                 padding-right: 10px;
                 font-size: $fontsize-menu;
-                box-shadow: none;
                 &:hover {
                     background-color: $color-gray-200;
                 }

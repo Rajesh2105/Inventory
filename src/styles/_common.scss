@@ -14,7 +14,7 @@ body,
 
 body {
     overflow: hidden;
-    font-family: $default-body-font !important;
+    font-family: $default-body-font;
     font-size: $default-body-font-size;
     color: $default-body-font-color;
     @include placeholder($color-gray-600);
@@ -44,9 +44,7 @@ table {
 a {
     text-decoration: none;
 }
-text {
-    font: 11.998px "Source Sans Pro", arial, sans-serif !important;
-}
+
 // Preloader
 .k-grid-norecords {
     font-style: italic;
@@ -63,23 +61,11 @@ text {
     &:before,
     .spinner {
         position: absolute;
-        top: calc(50% - 25px) !important;
+        top: calc(50% - 25px);
         left: calc(50% - 25px);
         width: 5rem;
         height: 5rem;
-        /* margin: 0 auto; */
-        background-color: $color-primary-light;
-        border-radius: 100%;
-        -webkit-animation: s-scaleout 1s infinite ease-in-out;
-        animation: s-scaleout 1s infinite ease-in-out;
-    }
-    .spinnerla{
-        position: absolute;
-        top: calc(50% - 25px) !important;
-        left: calc(50% - 25px);
-        width: 5rem;
-        height: 5rem;
-        margin: 27em auto;
+        margin: 0 auto;
         background-color: $color-primary-light;
         border-radius: 100%;
         -webkit-animation: s-scaleout 1s infinite ease-in-out;
@@ -221,7 +207,9 @@ button {
 }
 
 
-.k-picker-solid {
+.k-dropdown .k-dropdown-wrap,
+.k-textbox,
+input {
     border: 1px solid $default-line-color;
     border-radius: $default-border-radius;
     padding: 7px 8px 8px;
@@ -231,7 +219,7 @@ button {
     background: $color-white;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 140px !important;
+    width: 140px;
     &:focus,
     &:hover {
         color: $default-body-font-color;
@@ -263,12 +251,12 @@ button {
 //   }
 // }
 // Reset Override
-.k-dropdownlist,
+.k-dropdown .k-dropdown-wrap,
 .k-datepicker .k-picker-wrap {
-    &.k-focus {
+    &.k-state-focused {
         box-shadow: none;
     }
-    .k-input-inner {
+    .k-input {
         padding: 0 19px 0 0;
         height: auto;
         font-size: $fontsize-menu;
@@ -278,17 +266,13 @@ button {
 }
 
 .k-datepicker {
-    .k-input-button {
+    .k-select {
         background-color: $color-white;
         background-image: none;
-        &:hover{
-            background-color: $color-white;
-        }
         .k-icon {
             color: $color-gray-800 !important;
             font-size: $fontsize-lg;
-            margin-right: 9px !important;
-            margin-top: 20px;
+            margin-right: -4px !important;
             @include etonicon;
             &:before {
                 content: "\e813"; //icon-calendar
@@ -297,18 +281,18 @@ button {
     }
 }
 
-.k-dropdownlist:hover {
-    .k-input-button>.k-button-icon {
+.k-picker-wrap:hover {
+    .k-select {
         background-color: $color-white !important;
         background-image: none !important;
     }
 }
 
-.k-dropdownlist{
-    .k-input-button {
+.k-dropdown .k-dropdown-wrap {
+    .k-select {
         position: absolute;
         right: 0;
-        top: 10px;
+        top: 5px;
         .k-icon {
             color: $color-gray-800 !important;
             font-size: $fontsize-menu !important;
@@ -353,7 +337,7 @@ button {
 }
 
 // Buttons
-.k-dialog-button-layout-stretched .k-button:not(:hover):not(.k-hover):not(:active):not(.k-active),
+.k-dialog-button-layout-stretched .k-button:not(:hover):not(.k-state-hover):not(:active):not(.k-state-active),
 .k-button,
 .button {
     padding: 8px 13px;
@@ -367,12 +351,13 @@ button {
     height: $default-input-height;
     overflow: hidden;
     text-overflow: ellipsis;
-    &.k-button-solid-primary, &.primary{
-    background-color: $color-blue;
-    color: $color-white;
-    box-shadow: none;
+    &.k-primary:not(:hover):not(.k-state-hover):not(:active):not(.k-state-active),
+    &.k-primary,
+    &.primary {
+        background-color: $color-blue;
+        color: $color-white;
+        box-shadow: none;
         &:hover {
-            padding: 8px 13px;
             background: $color-blue-dark;
             box-shadow: none;
             color: $color-white;
@@ -386,10 +371,6 @@ button {
             color: $color-white;
             background: $color-red-dark;
         }
-    }
-    &::before{
-        transition: none;
-        padding: 8px 13px;
     }
     &.transparent {
         background-color: transparent;
@@ -414,7 +395,7 @@ button {
         @include shadow-box;
     }
     &:hover {
-       /*  padding: 0; */
+        padding: 8px 13px;
         border: 0;
         border-radius: $default-border-radius;
         color: $default-body-font-color;
@@ -425,7 +406,6 @@ button {
         height: 31px;
     }
 }
-
 
 .icon-button,
 .mat-icon-button,
@@ -607,7 +587,7 @@ button {
             background-color: transparent;
             border: 0;
         }
-        &>.k-panelbar-item>.k-link {
+        &>.k-item>.k-link {
             background-color: rgba(355, 355, 355, 0.8);
             color: $color-primary-dark;
             font-size: $fontsize-md;
@@ -628,7 +608,6 @@ button {
         }
     }
 }
-
 // .k-drawer-item {
 //     background-color: #fff;
 //     .k-icon {
@@ -657,11 +636,11 @@ button {
 //     background-color: #fff;
 // }
 
-.k-drawer-item.k-selected {
+.k-drawer-item.k-state-selected {
     color: $color-blue;
     background-color: white;
 }
-.k-drawer-item.k-selected:hover, .k-drawer-item.k-selected.k-state-hover{
+.k-drawer-item.k-state-selected:hover, .k-drawer-item.k-state-selected.k-state-hover{
     color:$color-blue;
     background-color: white;
 }
@@ -720,11 +699,8 @@ button {
 }
 
 .dashboard-wrapper {
-    .k-tabstrip-items-wrapper {
-        .k-tabstrip-items{
-        z-index: 9;
-        flex-wrap: initial !important;
-        }
+    .k-tabstrip-items {
+        z-index: 8;
     }
 }
 
@@ -736,12 +712,10 @@ button {
 .mat-drawer-content {
     overflow: hidden !important;
     .dashboard-wrapper {
-        .k-tabstrip-items-wrapper {
-            +.k-tabstrip-content {
+        .k-tabstrip-items {
+            +.k-content {
                 overflow: auto;
                 background-color: $background-body !important;
-                border-color: $background-body !important;
-                color: $background-body !important;
                 @include mobile-above {
                     height: calc(100vh - #{$default-header-height} - #{$dashboard-tabs-height});
                     padding: 1.4rem;
@@ -750,9 +724,6 @@ button {
                     height: calc(100vh - #{$default-header-height} - #{$dashboard-tabs-height} + 1rem);
                     padding: 0.5rem 0 0.5rem 0.5rem;
                 }
-                &.k-active{
-                    box-shadow: none;
-                }
             }
         }
     }
@@ -760,6 +731,7 @@ button {
 
 .app-content-wrapper {
     position: relative;
+    overflow: auto;
     height: calc(100vh - #{$default-header-height});
     background-color: $background-body;
     &.with-second-tab {
@@ -803,8 +775,8 @@ button {
 }
 
 // Hide Tabs Horizontal Scroll
-.mobile-dialog-details-container .k-tabstrip-top>.k-tabstrip-items-wrapper>.k-tabstrip-items,
-.dashboard-wrapper .k-tabstrip-items-wrapper>.k-tabstrip-items {
+.mobile-dialog-details-container .k-tabstrip-top>.k-tabstrip-items,
+.dashboard-wrapper .k-tabstrip-items {
     &::-webkit-scrollbar {
         width: 0;
         height: 0;
@@ -818,7 +790,7 @@ button {
 .inbox-message-wrapper .message-display,
 .action-widget-component .section-listing-wrapper,
 .dialog-details-wrapper+.k-window-content .details-right-panel .details-content-tab,
-.mat-drawer-content .dashboard-wrapper>.k-tabstrip-items-wrapper .k-tabstrip-items+.k-content,
+.mat-drawer-content .dashboard-wrapper .k-tabstrip-items+.k-content,
 .inbox-list-wrapper .k-drawer-items,
 .table-wrapper .k-grid-content {
     &::-webkit-scrollbar-thumb {
@@ -890,7 +862,7 @@ button {
 // the below code is to increase the height of coloum headers of the table
 .k-grid .k-grid-header .k-header .k-link {
     overflow: visible !important;
-     white-space: nowrap !important; 
+     white-space: normal !important; 
      display: inline-flex !important;
      vertical-align: text-top;
  }
@@ -991,18 +963,9 @@ display: none;
 .k-treeview-leaf.k-selected {
     color: #fff;
     font-weight: 500 !important;
-    background-color: $color-blue !important;
-    box-shadow: none;
 }
 .k-treeview-leaf {
    width: 190px;
-   &:hover {
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.1);
-    cursor: default;
-    opacity: 1;
-    box-shadow: none;
-  }
 }
 .filter-wrapper  {
     margin-left: -26px;
@@ -1053,5 +1016,4 @@ display: none;
         padding-top: 25px !important;
 
     }
-    
 

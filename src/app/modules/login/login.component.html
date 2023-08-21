@@ -1,0 +1,36 @@
+<div class="login-page">
+    <div class="background-wrapper">
+        <div class="background-image"></div>
+    </div>
+    <div class="gradient-layer"></div>
+
+    <!-- <div class="login-langselect"> -->
+        <!-- <label for=""> -->
+            <!-- <select #langselect (change)="translate.use(langselect.value)">
+                <option *ngFor="let lang of translate.getLangs()" [value]="lang">{{lang |
+                    translate }}</option>
+            </select> -->
+            <!-- <select #langselect (change)="changeLanguage(langselect.value)">
+                <option *ngFor="let lang of translate.getLangs()" [value]="lang">{{ lang |
+                    translate }}</option>
+            </select>
+        </label> -->
+    <!-- </div> -->
+
+    <div class="login-wrapper">
+
+        <div style="clear: both;"></div>
+
+        <img src="assets/images/login_logo.png" class="login-logo" alt="login_logo" />
+
+        <div class="login-form">
+            <button (click)="doLogin()" class="login-button" id="login-button">{{ 'SIGN_IN' }}</button>
+        </div>
+
+    </div>
+
+  
+
+
+</div>
+<div kendoDialogContainer></div>

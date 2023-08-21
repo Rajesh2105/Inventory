@@ -106,7 +106,7 @@ $inbox-list-toolbar-height: 67px;
                     }
                 }
             }
-            &.k-selected {
+            &.k-state-selected {
                 background-color: $color-blue-light;
             }
         }
@@ -275,10 +275,8 @@ $inbox-list-toolbar-height: 67px;
                                     .k-toolbar {
                                         width: calc(100% - 150px);
                                         height: 50px;
-                                        padding-left: 10px;
-                                        .k-icon-button {
+                                        .k-button-icon {
                                             border-radius: 0 !important;
-                                            padding:0;
                                             &:hover {
                                                 border-radius: 0 !important;
                                             }
@@ -445,10 +443,6 @@ $inbox-list-toolbar-height: 67px;
         height: calc(100vh - 5rem - 60px) !important;
         .message-form .k-editor {
             height: calc(100% - 8rem - 60px) !important;
-            .k-toolbar> kendo-toolbar-renderer{
-                visibility: hidden;
-                display: none;
-            }
         }
     }
 }
