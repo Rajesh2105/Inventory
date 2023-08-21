@@ -62,7 +62,7 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit(): void { 
-    this.router.navigate(["/visibility"]); 
+    /* this.router.navigate(["/visibility"]);  */
     // this.router.navigate(["/roleSetup"]); 
   }
 
