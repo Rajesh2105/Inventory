@@ -7,24 +7,24 @@
                 <!-- <span class="admin-dashboard">MANAGEMENT DASHBOARD</span> -->
             </a> 
             <a class="nav-link" routerLinkActive="active-nav-link" routerLink="/dashboard"><span class="etonicon"
-                [title]="'HOME' | translate">
-                <img class="header-icons" alt="" src="assets/images/Home.png">
+                [title]="'INVOICE' | translate">
+                <img class="header-icons" alt="" src="assets/images/invoice.png">
             </span>
-            <span class="link-text">{{ 'HOME' | translate }}</span></a>
-        <a *ngIf="exclusions.indexOf('actions') === -1" class="nav-link" routerLinkActive="active-nav-link"
+            <span class="link-text">{{ 'INVOICE' | translate }}</span></a>
+        <!-- <a *ngIf="exclusions.indexOf('actions') === -1" class="nav-link" routerLinkActive="active-nav-link"
             routerLink="/actions"><span class="etonicon" [title]="'ACTIONS' | translate">
                 <img class="header-icons" alt="" src="assets/images/Actions.png">
             </span>
-            <span class="link-text">{{ 'ACTIONS' | translate }}</span></a>
-        <a *ngIf="exclusions.indexOf('documents') === -1" class="nav-link" routerLinkActive="active-nav-link"
+            <span class="link-text">{{ 'ACTIONS' | translate }}</span></a> -->
+        <!-- <a *ngIf="exclusions.indexOf('documents') === -1" class="nav-link" routerLinkActive="active-nav-link"
             routerLink="/documents"><span class="etonicon" [title]="'DOCUMENTS' | translate">
                 <img class="header-icons" alt="" src="assets/images/Documents.png">
-            </span>
-            <span class="link-text">{{ 'DOCUMENTS' | translate }}</span></a>
+            </span> -->
+            <!-- <span class="link-text">{{ 'DOCUMENTS' | translate }}</span></a>
         <a *ngIf="exclusions.indexOf('messages') === -1" class="nav-link" routerLinkActive="active-nav-link"
             routerLink="/messages"><span class="etonicon" [title]="'MESSAGES' | translate"><img class="header-icons"
                     alt="" src="assets/images/Messaging.png"></span>
-            <span class="link-text">{{ 'MESSAGES' | translate }}</span></a>
+            <span class="link-text">{{ 'MESSAGES' | translate }}</span></a> -->
        
 
          </div> 
@@ -32,7 +32,7 @@
             <ul fxLayout="row" fxLayoutGap="10px">
                 <li>
                     <div class="header-profile">
-                        <button mat-button [matMenuTriggerFor]="menu">
+                        <!-- <button mat-button [matMenuTriggerFor]="menu">
                             <img class="round-avatar" src="assets/images/avatar_default.svg" alt="Steven Adams">
                             <span>{{LoggedInUserName}}</span>
                             <span class="etonicon icon-caret-down"></span>
@@ -43,7 +43,7 @@
                                 <span class="etonicon icon-arrow-right"></span>
                                 <span> {{ 'SIGN_OUT' | translate }} </span>
                             </button>
-                        </mat-menu>
+                        </mat-menu> -->
                       
                     </div>
                      

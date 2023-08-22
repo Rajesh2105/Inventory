@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { DataService } from 'src/app/shared/services/data.service';
+// import { DataService } from 'src/app/shared/services/data.service';
 import { Router } from '@angular/router';
 import { DrawerItem, DrawerSelectEvent } from '@progress/kendo-angular-layout';
 
@@ -20,7 +20,7 @@ export class HeaderNavComponent implements OnInit {
   show: boolean = false;
   showActions: boolean = false;
   messages: any[] = [];
-  messagesCopy: any[];
+  messagesCopy: any[] | undefined;
   exclusions: any[] = [];
   unreadMessages: number = 0;
 
@@ -38,7 +38,7 @@ export class HeaderNavComponent implements OnInit {
   ];
 
   constructor(
-    private dataService: DataService,
+
     private router: Router
   ) { }
 
@@ -53,23 +53,9 @@ export class HeaderNavComponent implements OnInit {
 
     }
 
-    this.dataService.moduleExclusions.subscribe((m) => {
-      this.exclusions = m;
-    });
+  
 
 
-    this.dataService.userMessages.subscribe((m) => {
-      this.messages = m;
-      // this.messagesCopy = [...this.messages];
-      this.unreadMessages = m.filter((msg) => { return !msg.msgr_read }).length;
-    });
-
-    this.dataService.billActions.subscribe((d) => {
-      console.log('Notificcations actions:', d);
-      this.billActions = d;
-      this.billActionsCount = this.billActions.length;
-      this.items[0].count = this.billActionsCount;
-    })
 
 
   }
@@ -78,10 +64,7 @@ export class HeaderNavComponent implements OnInit {
 
   }
   onSearch(searchTerm: string) {
-    this.messages = this.messagesCopy.filter((c) => {
-      return (c.topicDesc.toLowerCase().indexOf(searchTerm) > -1 || c.pmi_prtl_msg_sbjct.toLowerCase().indexOf(searchTerm) > -1)
 
-    });
   }
 
   toggleSideBarFun() {

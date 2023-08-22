@@ -18,13 +18,16 @@ import { LayoutModule } from '@progress/kendo-angular-layout';
 import { PopupModule } from '@progress/kendo-angular-popup';
 import { MatMenuModule } from '@angular/material/menu';
 import { LoginModule } from './modules/login/login.module';
+import {MatToolbarModule} from '@angular/material/toolbar'; 
+import { HeaderNavComponent } from './components/header/header-nav/header-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
     DefaultComponent,
-    SidebarComponent
+    SidebarComponent,
+    HeaderNavComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,9 @@ import { LoginModule } from './modules/login/login.module';
     MatSidenavModule,
     LayoutModule,
     PopupModule,
-    MatMenuModule
+    MatMenuModule,
+    MatToolbarModule,
+
   ],
   exports:[MatSidenavModule, DialogsModule, PopupModule, MatMenuModule, LoginFormComponent],
  
